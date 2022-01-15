@@ -1,1 +1,1 @@
-
+This mod adds a button that will reduce next turn's income of a player by X% if they do not press the button in their current turn. AI's will not be effected by this mod. 
