@@ -9,8 +9,8 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable,Game,close)
     if (playerGameData.timesFailed==nil) then playerGameData.timesFailed=0; end
     if (playerGameData.isPlayer==nil) then playerGameData.isPlayer=false; end
     ------------ Set usefull vars ----------------------------------------
-    playerIsPlaying = (game.Us ~= nil) and (game.Us.State == WL.GamePlayerState.Playing)
-    
+    local playerIsPlaying = (game.Us ~= nil) and (game.Us.State == WL.GamePlayerState.Playing);
+    local distributionOver = game.Game.TurnNumber > 0 
     
     ------- Configure UI --------------------------------------
     vert = UI.CreateVerticalLayoutGroup(rootParent);
@@ -30,22 +30,29 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable,Game,close)
     ---------- Set appripriate properties for the button
     -- player is in the game
     if (playerIsPlaying) then       
-        -- assign right colors and label to button
-        if (playerGameData.btnPressed) then
-            button
-                .SetText(" ‏‏‎ ‎‏‏‎‏‏ ‎‏‏You clicked me! ‏‏‎ ‎‏‏‎‏‏‎‏‏‎")
-                .SetColor("#00FF00");
+        -- remove button during picks
+        if (distributionOver) then
+            -- assign right colors and label to button
+            if (playerGameData.btnPressed) then
+                button
+                    .SetText("‎‏‏You clicked me!")
+                    .SetColor("#00FF00");
+            else
+                button
+                    .SetColor("#FF0000")
+                    .SetText("Press me to survive!")
+                    .SetInteractable(true);
+            end
         else
             button
                 .SetColor("#FF0000")
-                .SetText("Press me to survive!")
-                .SetInteractable(true);
+                .SetText("Not during picking...")
         end
         
     -- player was in the game during T1, but no longer is    
     elseif (playerGameData.isPlayer) then
         button
-            .SetText("You are not playing.")
+            .SetText("You are not playing")
             .SetColor("#00FF00");
 
    -- player is not in the game -> player is spectating
@@ -61,7 +68,7 @@ function clicked()
     -- update button
     button
         .SetInteractable(false)
-        .SetText("‎‏‏‎ ‎‏‏‎‏ ‎‏‏‎You clicked me! ‎‏‎ ‎‏‏‎‏ ‎‏‏‎")
+        .SetText("‎‏‏You clicked me!")
         .SetColor("#00FF00");
         
      --send message 
