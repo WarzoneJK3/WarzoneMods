@@ -13,6 +13,8 @@ function Server_GameCustomMessage(Game,PlayerID,payload,setReturn)
         end
     elseif payload.msg=="ClickButton" then
         data.btnPressed = true;
+    elseif payload.msg=="WarningSeen" then
+        data.showWarning = false;
     end
     
     -- save data

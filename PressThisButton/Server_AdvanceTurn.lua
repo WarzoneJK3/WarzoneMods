@@ -10,7 +10,7 @@ function Server_AdvanceTurn_End(game,addOrder)
         
             -- load data for specific player
             data = playerGameData[player.ID];
-            if (data==nil) then data = {btnPressed=false,timesFailed=0}; end
+            if (data==nil) then data = {}; end
             
             -- check if they failed to press the button
             if (data.btnPressed==nil) then data.btnPressed=false; end
@@ -27,9 +27,11 @@ function Server_AdvanceTurn_End(game,addOrder)
                 incomeMod = WL.IncomeMod.Create(player.ID, incomeDelete, incomeMsg);
                 addOrder(WL.GameOrderEvent.Create(player.ID, orderMsg, {}, {}, nil, {incomeMod}));
                 
-                -- update player data
+                -- update player data when failed
                 if (data.timesFailed==nil) then data.timesFailed=0; end
                 data.timesFailed = data.timesFailed + 1;
+                data.showWarning = true;                
+                data.warningMessage = "You failed to press The Button, you lost "..Mod.Settings.ReducePercent.."% of your income: "..incomeDelete.." armies per turn";
                 
             end
             
