@@ -6,9 +6,9 @@ function Client_PresentConfigureUI(rootParent)
     if (initialTick == nil) then initialTick = true; end;
     
     --create vertical element to add settings to
-    local vert = UI.CreateVerticalLayoutGroup(rootParent);
+    vert = UI.CreateVerticalLayoutGroup(rootParent);
     -- create a slider element
-    local horz = UI.CreateHorizontalLayoutGroup(vert);
+    horz = UI.CreateHorizontalLayoutGroup(vert);
 	UI.CreateLabel(horz).SetText('Reduce player income by (%)');
     numberInputField = UI.CreateNumberInputField(horz)
 		.SetSliderMinValue(1)
@@ -19,6 +19,5 @@ function Client_PresentConfigureUI(rootParent)
     warningToggle = UI.CreateCheckBox(vert)
         .SetText("Popup a warning to players when they failed to press the button")
         .SetIsChecked(initialTick); 
-        
 
 end

@@ -1,7 +1,7 @@
 function Server_GameCustomMessage(Game,PlayerID,payload,setReturn)
     -- load data
-    playerGameData = Mod.PlayerGameData;
-    data = playerGameData[PlayerID];
+    local playerGameData = Mod.PlayerGameData;
+    local data = playerGameData[PlayerID];
     if (data == nil) then data={}; end
     if (payload.msg==nil) then payload.msg=""; end
     
