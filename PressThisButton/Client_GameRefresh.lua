@@ -11,7 +11,7 @@ function Client_GameRefresh(game)
     if  (data.showWarning == nil) then data.showWarning=false; end
     if (data.warningMessage == nil) then data.warningMessage=""; end
     
-    if (data.showWarning) then
+    if (data.showWarning and Mod.Settings.PopupWarning) then
         UI.Alert(data.warningMessage);
         game.SendGameCustomMessage("Updating server, please wait... ", {msg="WarningSeen"}, function(reply)end);
     end

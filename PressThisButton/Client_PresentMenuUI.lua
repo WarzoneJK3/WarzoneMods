@@ -13,6 +13,8 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable,Game,close)
     local distributionOver = game.Game.TurnNumber > 0 
     
     ------- Configure UI --------------------------------------
+    red = "#FF0000"
+    green = "#00FF05"
     vert = UI.CreateVerticalLayoutGroup(rootParent);
     -- explainer of mod and settings
     explainer = UI.CreateLabel(vert).SetText('If the button below is not pressed this turn, your income will be reduced by '..Mod.Settings.ReducePercent..'% next turn.\n\n');
@@ -27,7 +29,7 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable,Game,close)
     -- show history to users            
     historyLine = UI.CreateLabel(vert).SetText('\nSo far, you failed to press the button '..playerGameData.timesFailed..' times.');            
      
-    ---------- Set appripriate properties for the button
+    ---------- Set appripriate properties for the button -------------------------
     -- player is in the game
     if (playerIsPlaying) then       
         -- remove button during picks
@@ -36,16 +38,16 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable,Game,close)
             if (playerGameData.btnPressed) then
                 button
                     .SetText("‎‏‏You clicked me!")
-                    .SetColor("#00FF00");
+                    .SetColor(green);
             else
                 button
-                    .SetColor("#FF0000")
+                    .SetColor(red)
                     .SetText("Press me to survive!")
                     .SetInteractable(true);
             end
         else
             button
-                .SetColor("#FF0000")
+                .SetColor(red)
                 .SetText("Not during picking...")
         end
         
@@ -53,13 +55,13 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable,Game,close)
     elseif (playerGameData.isPlayer) then
         button
             .SetText("You are not playing")
-            .SetColor("#00FF00");
+            .SetColor(green);
 
    -- player is not in the game -> player is spectating
     else
         button
             .SetText("You're not a player.")
-            .SetColor("#00FF00");   
+            .SetColor(green);   
         UI.Destroy(historyLine) -- remove history line if player doesnt have history
     end
 end
@@ -69,7 +71,7 @@ function clicked()
     button
         .SetInteractable(false)
         .SetText("‎‏‏You clicked me!")
-        .SetColor("#00FF00");
+        .SetColor(green);
         
      --send message 
     game.SendGameCustomMessage("Submitting button press to server...",{msg = "ClickButton"},function(reply) end); --empty callback function
