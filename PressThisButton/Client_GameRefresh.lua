@@ -4,7 +4,7 @@ function Client_GameRefresh(game)
     local data = Mod.PlayerGameData;
     
 	if (not data.InitialPopupDisplayed ) then
-        UI.Alert("This game includes the Press This Button mod. If you dont press the button your income will be reduced by "..Mod.Settings.ReducePercent..'% next turn.')
+        UI.Alert("This game includes the Press This Button mod. If you dont press the button your income will be reduced by "..Mod.Settings.ReducePercent..'% next turn. You can find the button in the mod menu unde Game > Press This Button')
         game.SendGameCustomMessage("Updating server, please wait... ", {msg = "InitialPopupDisplayed"}, function(reply)end);
 	end
     
