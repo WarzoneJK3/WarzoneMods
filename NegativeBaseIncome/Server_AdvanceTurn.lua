@@ -1,4 +1,4 @@
-function Server_AdvanceTurn_Start(game, addOrder)
+function Server_AdvanceTurn_End(game, addOrder)
     local baseIncome = Mod.PrivateGameData.Income;
     if (baseIncome == nil) then baseIncome = -5 end;
 
