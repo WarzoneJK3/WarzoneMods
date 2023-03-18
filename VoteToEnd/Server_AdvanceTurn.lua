@@ -33,7 +33,7 @@ function Server_AdvanceTurn_Start(game,addOrder)
     end
 
     local neededVotes = math.ceil(totalPlayers * percent)
-    VTEconditionTrue = neededVotes <= votedPlayers or true
+    VTEconditionTrue = neededVotes <= votedPlayers
     if VTEconditionTrue then
         if (publicData.turnVotePassed < 0) then
             publicData.turnVotePassed = currentTurn
