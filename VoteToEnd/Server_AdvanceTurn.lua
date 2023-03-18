@@ -1,4 +1,11 @@
 function Server_AdvanceTurn_Start(game,addOrder)
+    -- check that VTE is actually possible
+    if (game.Settings.IsCoinsGame 
+    or game.Settings.IsTournamentOrLadder 
+    or game.Settings.IsCustomCoinGame) then
+        return;
+    end
+
     -- get globals
     local publicData = Mod.PublicGameData
     local playerData = Mod.PlayerGameData
