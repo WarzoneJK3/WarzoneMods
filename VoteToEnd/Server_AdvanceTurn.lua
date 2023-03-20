@@ -27,8 +27,10 @@ function Server_AdvanceTurn_Start(game,addOrder)
     end
 
     for playerID, time in pairs(game.Game.VotedToEndGame) do
-        playerVotes[playerID] = true;
-        votedPlayers = votedPlayers + 1
+        if (not playerVotes[playerID] == nil) then
+            playerVotes[playerID] = true;
+            votedPlayers = votedPlayers + 1
+        end
     end
 
     -- process turn
