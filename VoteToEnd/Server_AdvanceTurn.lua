@@ -2,7 +2,7 @@ function Server_AdvanceTurn_Start(game,addOrder)
     -- check that VTE is actually possible
     if (game.Settings.SinglePlayer
     or game.Settings.IsCoinsGame 
-    or game.Settings.IsTournamentOrLadder 
+    or game.Settings.IsTournamentLadderQuickmatchOrClanWar
     or game.Settings.IsCustomCoinGame) then
         return;
     end
