@@ -78,7 +78,7 @@ function Server_AdvanceTurn_Start(game,addOrder)
                     end
                 end
                 local playername = game.Game.Players[playerID].DisplayName(nil, false)
-                local msg = playername.." was eliminted to force a VTE!"
+                local msg = playername.." will be eliminted to force a VTE."
                 deathOrder =  WL.GameOrderEvent.Create(playerID, msg, nil, terrMods, nil, nil)
                 addOrder(deathOrder)
             end

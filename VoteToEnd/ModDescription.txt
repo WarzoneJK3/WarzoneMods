@@ -1,3 +1,5 @@
 This mod deals with players that refuse to Vote To End the game after a majority of players agreed to vote. 
 Refusing players will be given some turns to VTE, before being forcefully eliminated.
 After a forceful elimination, all the territories a player owned will be reset to neutral. 
+
+WARNING: Since this mod eliminates players, it might cause other mods to crash! When using this mod with other mods, test for mod compatibility!
