@@ -1,6 +1,7 @@
 function Server_AdvanceTurn_Start(game,addOrder)
     -- check that VTE is actually possible
-    if (game.Settings.IsCoinsGame 
+    if (game.Settings.SinglePlayer
+    or game.Settings.IsCoinsGame 
     or game.Settings.IsTournamentOrLadder 
     or game.Settings.IsCustomCoinGame) then
         return;
@@ -18,7 +19,6 @@ function Server_AdvanceTurn_Start(game,addOrder)
     local totalPlayers = 0
     local votedPlayers = 0
     local playerVotes = {}
-
     for playerID, player in pairs(game.Game.PlayingPlayers) do
         if (not player.IsAIOrHumanTurnedIntoAI) then 
             playerVotes[playerID] = false
@@ -32,7 +32,7 @@ function Server_AdvanceTurn_Start(game,addOrder)
             votedPlayers = votedPlayers + 1
         end
     end
-
+    print("got here #3")
     -- process turn
     local percent = Mod.Settings.PercentPlayers
     if (percent == nil) then 
