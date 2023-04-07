@@ -1,9 +1,8 @@
-function Server_AdvanceTurn_Start(game,addOrder)
+function Server_AdvanceTurn_Start(game, addOrder)
     -- check that VTE is actually possible
     if (game.Settings.SinglePlayer
     or game.Settings.IsCoinsGame 
-    or game.Settings.IsTournamentLadderQuickmatchOrClanWar
-    or game.Settings.IsCustomCoinGame) then
+    or game.Settings.IsTournamentLadderQuickmatchOrClanWar) then
         return;
     end
 
@@ -32,7 +31,7 @@ function Server_AdvanceTurn_Start(game,addOrder)
             votedPlayers = votedPlayers + 1
         end
     end
-    print("got here #3")
+
     -- process turn
     local percent = Mod.Settings.PercentPlayers
     if (percent == nil) then 
