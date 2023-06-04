@@ -3,7 +3,7 @@ function Client_GameRefresh(game)
 
     local data = Mod.PlayerGameData;
     
-    if  (data.showWarning == nil) then data.showWarning=false; end
+    if (data.showWarning == nil) then data.showWarning=false; end
     if (data.warningMessage == nil) then data.warningMessage=""; end
     
     if (data.showWarning) then

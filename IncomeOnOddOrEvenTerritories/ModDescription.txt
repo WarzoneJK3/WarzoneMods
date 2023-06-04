@@ -1,0 +1,9 @@
+This mod removes players/teams income if they own an odd or even number of territories. 
+
+Available settings:
+• Trigger on odd or even turns
+• Apply to team total or individual players (only has effect in team games)
+• Remove income by a fixed number or by percentage
+• Amount of income to be removed
+
+NOTICE: If you want to always remove all income, disable 'Remove income by %' and set 'Income to remove' to a very high value. (This is needed due to the unknown order in which mods execute.)
