@@ -3,10 +3,10 @@ function Client_PresentConfigureUI(rootParent)
     
     -- load initial values 
     useOddNumber = Mod.Settings.UseOddNumber;
-    if (useOddNumber == nil) then useOddNumber = true; end
+    if (useOddNumber == nil) then useOddNumber = false; end
 
     useTeams = Mod.Settings.UseTeams;
-    if (useTeams == nil) then useTeams = true; end
+    if (useTeams == nil) then useTeams = false; end
 
     removeIncomeByPercent = Mod.Settings.UsePercent;
     if (removeIncomeByPercent == nil) then removeIncomeByPercent = true; end
@@ -19,8 +19,8 @@ function Client_PresentConfigureUI(rootParent)
 
 
     -- create explainer
-    UI.CreateLabel(vert).SetText("This mods removes the income of players/teams based on the number of territories that they own.");
-    UI.CreateLabel(vert).SetText("If you want to always remove all income, disable 'Remove income by %' and set 'Income to remove' to a very high value.");
+    UI.CreateEmpty(vert).SetPreferredHeight(15);
+    UI.CreateLabel(vert).SetText("Note: If you want to always remove all income, disable 'Remove income by %' and set 'Income to remove' to a very high value.");
     UI.CreateLabel(vert).SetText("(This is needed due to the unknown order in which mods execute.)");
     UI.CreateEmpty(vert).SetPreferredHeight(15);
 

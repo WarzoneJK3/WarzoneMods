@@ -6,4 +6,4 @@ Available settings:
 • Remove income by a fixed number or by percentage
 • Amount of income to be removed
 
-NOTICE: If you want to always remove all income, disable 'Remove income by %' and set 'Income to remove' to a very high value. (This is needed due to the unknown order in which mods execute.)
+NOTICE: Due to Warzone limitations, turn 1 income cannot be modified!

@@ -11,9 +11,10 @@ function Client_PresentSettingsUI(rootParent)
     teamsString = (useTeams and "team" or "player");
     amountString = (usePercent and tostring(percentToRemove).."%" or tostring(armiesToRemove))
 
-    orderMsg = "Removing "..amountString.." income when a "..teamsString.." owns an "..oddEvenString.." number of territories";
-
     -- setup layout
     vert = UI.CreateVerticalLayoutGroup(rootParent);
     UI.CreateLabel(vert).SetText("Removing "..amountString.." income when a "..teamsString.." owns an "..oddEvenString.." number of territories.");
+    if (useOddNumber) then
+        UI.CreateLabel(vert).SetColor("#23A0FF").SetText("Note: Turn 1 income cannot be removed due to Warzone limitations.");
+    end
 end
