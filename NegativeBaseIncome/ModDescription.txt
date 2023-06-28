@@ -1,4 +1,4 @@
 This mod makes the base income negative instead of positive.
 
-WARNING: Without base income, the game could become unplayable!!
+WARNING: With negative base income, the game could become unplayable!!
 Make sure the settings give players enough options to bridge the first few turns where the bonus income is less than base income.
