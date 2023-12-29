@@ -139,3 +139,10 @@ now, i am using the Immersive system discord who has a roll-dice bot, but many p
 **Concept** 2023-06-07<br>
 **Started** 2023-06-07<br>
 **Inspiration** Suggestion from [Coenquistatore](https://www.warzone.com/Profile?p=50135888788)
+
+### Private Notes
+
+A simple mod that allows you to create private notes in games, labeled per turn. 
+
+**Concept** 2023-12-29<br>
+**Started** 2023-12-29<br>
