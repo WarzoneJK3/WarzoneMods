@@ -1,22 +1,29 @@
 function Server_GameCustomMessage(serverGame, playerID, payload, setReturn)
-
-    -- load data
+    -- load playerData
     local playerGameData = Mod.PlayerGameData;
-    local data = playerGameData[playerID];
+    local playerData = playerGameData[playerID] or {};
     local currentTurn = serverGame.Game.TurnNumber;
 
+    if (payload.changeNewTurnsTopTo ~= nil) then
+        -- update setting
+        playerData.newTurnsTop = payload.changeNewTurnsTopTo;
 
-    -- initialize items if they are ne
-    if (payload.note == nil) then return; end
-    if (data == nil) then data = {}; end
-    if (data[currentTurn] == nil) then data[currentTurn] = {}; end
+        -- save playerData
+        playerGameData[playerID] = playerData;
+        Mod.PlayerGameData = playerGameData;
 
+        return; -- return early to prevent nested if's
+    end
 
-    -- add the new note to data
-    table.insert(data[currentTurn], payload.note)
+    -- initialize items if they are nil
+    if (payload.noteText == nil) then return; end
+    if (playerData.notes == nil) then playerData.notes = {}; end
+    if (playerData.notes[currentTurn] == nil) then playerData.notes[currentTurn] = {}; end
+
+    -- add the new note to playerData
+    table.insert(playerData.notes[currentTurn], payload)
     
-
-    -- save data
-    playerGameData[playerID] = data;
+    -- save playerData
+    playerGameData[playerID] = playerData;
     Mod.PlayerGameData = playerGameData;
 end

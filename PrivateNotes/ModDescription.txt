@@ -1,3 +1,5 @@
 This mod allows you to take private notes in game. 
 Access the mod in the menu by using Game > Private Notes Mod.
 Use \n to insert a new line in your notes.
+
+Note: on some browsers you might be able to insert a newline by pressing [enter].
