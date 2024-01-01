@@ -47,6 +47,22 @@ Available settings:
 **Released** 2023-06-17<br>
 **Inspiration** https://www.warzone.com/Forum/696654-forbid-even-territories
 
+### [Private Notes](https://github.com/WarzoneJK3/WarzoneMods/tree/main/PrivateNotes)
+
+A simple mod that allows you to create private notes in games, labeled per turn. 
+
+It's features include: 
+
+* Store notes per turn
+* Link to territories/bonuses with the [Link] button
+* Change displayed turn order (new to old / old to new) with the [↑↓] button
+
+See the [Private Notes mod forum](https://www.warzone.com/Forum/736269-new-private-notes-mod) for more info. 
+
+**Concept** 2023-12-29<br>
+**Started** 2023-12-29<br>
+**Released** 2024-01-01
+
 ## Work in progress mods
 
 ### Lottery tickets
@@ -139,10 +155,3 @@ now, i am using the Immersive system discord who has a roll-dice bot, but many p
 **Concept** 2023-06-07<br>
 **Started** 2023-06-07<br>
 **Inspiration** Suggestion from [Coenquistatore](https://www.warzone.com/Profile?p=50135888788)
-
-### Private Notes
-
-A simple mod that allows you to create private notes in games, labeled per turn. 
-
-**Concept** 2023-12-29<br>
-**Started** 2023-12-29<br>
