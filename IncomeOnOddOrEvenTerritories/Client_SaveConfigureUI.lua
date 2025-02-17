@@ -6,7 +6,7 @@ function Client_SaveConfigureUI(alert)
 
     if (Mod.Settings.UsePercent) then
         local percentToRemove = percentSlider.GetValue();
-        if (percentToRemove <= 0  or percentToRemove > 100 or percentToRemove==nil) then 
+        if (percentToRemove==nil or percentToRemove <= 0 or percentToRemove > 100) then 
             alert('% to remove not set properly')
         else
             Mod.Settings.PercentToRemove = percentToRemove;  -- TO DO : round this properly 
