@@ -4,13 +4,13 @@ function Client_SaveConfigureUI(alert)
     local turns = turnsInputField.GetValue();
     
     -- check if values are within bounds
-    if (percents <= 50 or percents > 100 or percents==nil) then 
+    if (percents==nil or percents <= 50 or percents > 100) then 
         alert('"% of players" must be set between 51 and 100'); 
     else 
         Mod.Settings.PercentPlayers = percents
     end
 
-    if (turns < 1 or turns==nil) then
+    if (turns==nil or turns < 1) then
        alert('"Number of turns" must be set') 
     else
         Mod.Settings.WarningTurns = turns
