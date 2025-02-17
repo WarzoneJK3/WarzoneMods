@@ -9,7 +9,7 @@ function Server_AdvanceTurn_Start(game, addOrder)
     -- get globals
     local publicData = Mod.PublicGameData
     local playerData = Mod.PlayerGameData
-    local currentTurn = game.Game.TurnNumber
+    local currentTurn = game.ServerGame.Game.TurnNumber
     if publicData == nil then publicData = {} end
     if (publicData.turnVotePassed == nil) then publicData.turnVotePassed = -99 end
     if playerData == nil then playerData = {} end
@@ -18,14 +18,14 @@ function Server_AdvanceTurn_Start(game, addOrder)
     local totalPlayers = 0
     local votedPlayers = 0
     local playerVotes = {}
-    for playerID, player in pairs(game.Game.PlayingPlayers) do
+    for playerID, player in pairs(game.ServerGame.Game.PlayingPlayers) do
         if (not player.IsAIOrHumanTurnedIntoAI) then 
             playerVotes[playerID] = false
             totalPlayers = totalPlayers + 1
         end
     end
 
-    for playerID, time in pairs(game.Game.VotedToEndGame) do
+    for playerID, time in pairs(game.ServerGame.Game.VotedToEndGame) do
         if (not playerVotes[playerID] == nil) then
             playerVotes[playerID] = true;
             votedPlayers = votedPlayers + 1
@@ -78,7 +78,7 @@ function Server_AdvanceTurn_Start(game, addOrder)
                         table.insert(terrMods, terrMod)
                     end
                 end
-                local playername = game.Game.Players[playerID].DisplayName(nil, false)
+                local playername = game.ServerGame.Game.Players[playerID].DisplayName(nil, false)
                 local msg = playername.." will be eliminted to force a VTE."
                 deathOrder =  WL.GameOrderEvent.Create(playerID, msg, nil, terrMods, nil, nil)
                 addOrder(deathOrder)
