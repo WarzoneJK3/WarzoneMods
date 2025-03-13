@@ -1,3 +1,5 @@
+require("Annotations");
+
 function Client_PresentConfigureUI(rootParent)
   -- set initial value to whatever is stored, or 33% if nothing is stored
   local initialPercent = Mod.Settings.PercentPlayers;
@@ -10,14 +12,14 @@ function Client_PresentConfigureUI(rootParent)
   horz = UI.CreateHorizontalLayoutGroup(vert);
   
   -- Set % of players
-  UI.CreateLabel(horz).SetText('% of players that needs to VTE');
+  UI.CreateLabel(horz).SetText("% of players that needs to VTE");
   percentInputField = UI.CreateNumberInputField(horz)
-  .SetSliderMinValue(51)
+  .SetSliderMinValue(50)
   .SetSliderMaxValue(100)
   .SetValue(initialPercent);
 
   -- Set number of turns for warning
-  UI.CreateLabel(horz).SetText('Number of turns a player has to VTE after the voting treshold is passed');
+  UI.CreateLabel(horz).SetText("Number of turns a player has to VTE after the voting treshold is passed");
   turnsInputField = UI.CreateNumberInputField(horz)
   .SetSliderMinValue(1)
   .SetSliderMaxValue(10)
