@@ -1,6 +1,5 @@
 function Server_AdvanceTurn_End(game, addOrder)
-    local baseIncome = Mod.PrivateGameData.Income;
-    if (baseIncome == nil) then baseIncome = -5 end;
+    local baseIncome = -2 * game.Settings.MinimumArmyBonus;
 
     local incomeMsg = "Negative income mod";
     local incomes = {};
