@@ -63,6 +63,14 @@ See the [Private Notes mod forum](https://www.warzone.com/Forum/736269-new-priva
 **Started** 2023-12-29<br>
 **Released** 2024-01-01
 
+### [Negative base income](https://github.com/WarzoneJK3/WarzoneMods/tree/main/NegativeBaseIncome)
+
+Each turn, instead of +5 base income, players get -5 base income. (Or whatever the base income in the game might be.)
+
+**Concept** 2022-11-01<br>
+**Started** 2022-11-01<br>
+**Released** 2025-03-16 (after it finally became possible to change the turn 1 income)
+
 ## Work in progress mods
 
 ### Lottery tickets
@@ -71,14 +79,6 @@ Players can buy raffle tickets for a chance to win sometimes big and usually sma
 Mod is commerce only.
 
 **Concept** 2022-10-27
-
-### [Negative base income](https://github.com/WarzoneJK3/WarzoneMods/tree/main/NegativeBaseIncome)
-
-Each turn, instead of +5 base income, players get -5 base income. (Or whatever the base income in the game might be.)
-
-**Concept** 2022-11-01<br>
-**Started** 2022-11-01<br>
-**Released** Never (due to mods not being able to make changes to turn 1 income)
 
 ### Low morale bonusses
 
