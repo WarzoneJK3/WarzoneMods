@@ -53,7 +53,7 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, clientGame,
         .SetOnClick(addLocation);
 
     reverseTurnsToggle = UI.CreateButton(buttonContainer)
-        .SetText("↑↓")
+        .SetText("Sort")
         .SetColor("#BABABC")
         .SetOnClick(updateNewTurnsTopSetting)
 end
@@ -78,7 +78,7 @@ function makeNotesList()
 
     for turn = firstTurn, lastTurn, increment do
         if (notes[turn] ~= nil) then
-            UI.CreateLabel(existingNotesGroup).SetText("------   Turn "..turn.."  ------").SetColor("#FF00ED");
+            UI.CreateLabel(existingNotesGroup).SetText("------   Turn "..turn.."   ------").SetColor("#FF00ED");
 
             for idx, note in ipairs(notes[turn]) do
                 -- create layout group
@@ -240,8 +240,8 @@ function updateLocationContainer(showInstructions)
         .SetOnClick(removeLocation);
 end
 
-
 function updateNewTurnsTopSetting()
     newTurnsTop = not newTurnsTop;
     sendMessage("Updating setting...", {changeNewTurnsTopTo = newTurnsTop}, sendMessageCallback);
 end
+
