@@ -13,10 +13,8 @@ function Client_GameRefresh(game)
         game.SendGameCustomMessage("Updating server, please wait... ", {msg = "WarningSeen"}, function(reply) end);
     end
 
-    -- For the sake of debugging, print public game data to mod console when the account is JK_3
-    if (game.Us.PlayerID == 1051119) then
-        print(tableToString(Mod.PublicGameData));
-    end
+    -- For the sake of debugging, print public game data to mod console
+    print(tableToString(Mod.PublicGameData));
 end
 
 
