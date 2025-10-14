@@ -5,5 +5,3 @@ Available settings:
 • Apply to team total or individual players (only has effect in team games)
 • Remove income by a fixed number or by percentage
 • Amount of income to be removed
-
-NOTICE: Due to Warzone limitations, turn 1 income cannot be modified!

@@ -1,11 +1,6 @@
 # Warzone mods by [JK_3](https://www.warzone.com/Profile?p=31105111944)
 
-This repo contains my [Warzone](https://www.warzone.com) mods. Most of the mods listed below are just concepts, since I rarely have time to work on them, but I'll try to finish all of them eventually.
-
-* Released: 3
-* In progress: 2
-* Abandoned: 1
-* Backlog: 6
+This repository contains my [Warzone](https://www.warzone.com) mods. Most of the mods listed below are just concepts, since I rarely have time to work on them, but I'll try to finish all of them eventually.
 
 ## Released mods
 
@@ -40,8 +35,6 @@ Available settings:
 * Remove income by a fixed number or by percentage
 * Amount of income to be removed
 
-**NOTICE:** Due to Warzone limitations, turn 1 income cannot be modified!
-
 **Concept** 2023-06-03<br>
 **Started** 2023-06-03<br>
 **Released** 2023-06-17<br>
@@ -65,7 +58,13 @@ See the [Private Notes mod forum](https://www.warzone.com/Forum/736269-new-priva
 
 ### [Negative base income](https://github.com/WarzoneJK3/WarzoneMods/tree/main/NegativeBaseIncome)
 
-Each turn, instead of +5 base income, players get -5 base income. (Or whatever the base income in the game might be.)
+This mod makes the base income negative instead of positive. 
+For example, for a base income of 5 armies, 5 will be subtracted from the players total income instead of being added like it normally would.
+Note that the total income can never become negative, and will be at least 0 armies per turn. 
+
+**WARNING:** With negative base income, the game could become unplayable!!
+If a player is unable to capture any more territories they have no way to obtain more income to offset the negative base income, resulting in them getting stuck.
+Make sure the settings give players enough options to bridge the first few turns where the bonus income is less than base income.
 
 **Concept** 2022-11-01<br>
 **Started** 2022-11-01<br>
