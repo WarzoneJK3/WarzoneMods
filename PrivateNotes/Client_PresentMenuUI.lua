@@ -116,7 +116,7 @@ function addNote()
         -- cannot save empty text
         return;
     end
-    
+
     -- send the note to be saved
     local payload = {noteText = newNoteText, location = selectedLocation}
     sendMessage("Saving note...", payload, sendMessageCallback);
@@ -133,8 +133,10 @@ end
 
 
 function sendMessageCallback(replyFromServer)
-    -- ignore the reply completely, and just rebuild the exising list of notes
-    makeNotesList();
+    -- ignore the server reply completely, and just rebuild the exising list of notes
+    if (modMenuIsVisible()) then
+        makeNotesList();
+    end
 end
 
 
@@ -158,7 +160,7 @@ end
 
 
 function getTerritory(territory)
-    if (territory == nil or cancelTerritoryClick) then
+    if (territory == nil or cancelTerritoryClick or (not modMenuIsVisible())) then
         return WL.CancelClickIntercept;
     end
 
@@ -175,7 +177,7 @@ end
 
 
 function getBonus(bonus)
-    if (bonus == nil or cancelBonusClick) then
+    if (bonus == nil or cancelBonusClick or (not modMenuIsVisible())) then
         return WL.CancelClickIntercept;
     end
 
@@ -203,7 +205,7 @@ function updateLocationContainer(showInstructions)
     if (not UI.IsDestroyed(headerLabel)) then
         UI.Destroy(headerLabel);
     end
-    
+
     if (not UI.IsDestroyed(locationLabel)) then
         UI.Destroy(locationLabel);
     end
@@ -233,7 +235,7 @@ function updateLocationContainer(showInstructions)
             .SetFlexibleWidth(1)
             .SetColor("#00F4FF");
     end
-    
+
     locatationDeleteBtn = UI.CreateButton(locationContainer)
         .SetText("X")
         .SetColor("#FF0000")
@@ -245,3 +247,7 @@ function updateNewTurnsTopSetting()
     sendMessage("Updating setting...", {changeNewTurnsTopTo = newTurnsTop}, sendMessageCallback);
 end
 
+function modMenuIsVisible()
+    -- check if the UI base object exists and if the element that is the parent of the visible UI elements exists
+    return (UI ~= nil) and (UI.IsDestroyed ~= nil) and (not UI.IsDestroyed(vert))
+end
